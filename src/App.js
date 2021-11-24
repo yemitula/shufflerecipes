@@ -10,6 +10,7 @@ import Register from "./components/Register";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
 import BoardUser from "./components/BoardUser";
+import RecipesPage from "./components/RecipesPage";
 
 import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
@@ -35,27 +36,18 @@ const App = () => {
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <Link className="navbar-brand" to={"/"}>
-            Shuffle Recipes
+            ShuffleRecipes
           </Link>
-          <div className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to={"/home"}>
-                Home
-              </Link>
-            </li>
-            {currentUser && (
-              <li className="nav-item">
-                <Link className="nav-link" to={"/user"}>
-                  User Content
-                </Link>
-              </li>
-            )}
-          </div>
           {currentUser ? (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
                 <Link className="nav-link" to={"/profile"}>
-                  {currentUser.username}
+                  {currentUser.username}'s Profile
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={"/recipes"}>
+                  Recipes
                 </Link>
               </li>
               <li className="nav-item">
@@ -82,9 +74,9 @@ const App = () => {
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path={["/", "/home"]} component={Home} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path={["/", "/login"]} component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/recipes" component={RecipesPage} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/user" component={BoardUser} />
           </Switch>
