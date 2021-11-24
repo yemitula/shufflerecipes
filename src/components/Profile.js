@@ -29,9 +29,6 @@ const Profile = () => {
       <p>
         <strong>Firstname:</strong> {currentUser.firstname}
       </p>
-      <p>
-        <strong>Password:</strong> {currentUser.password}
-      </p>
       <strong>Authorities:</strong>
       <ul>
         {currentUser.roles.map((role, index) => (

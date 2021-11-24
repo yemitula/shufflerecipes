@@ -8,22 +8,21 @@ const register = (user) => {
 };
 
 const login = (user) => {
-  return axios.post(API_URL + "/signin", user)
-    .then(response => {
-      if (response.data.accessToken) {
-        localStorage.setItem("user", JSON.stringify(response.data));
-      }
+  return axios.post(API_URL + "/signin", user).then((response) => {
+    if (response.data.accessToken) {
+      localStorage.setItem("user", JSON.stringify(response.data));
+    }
 
-      return response;
-    });
+    return response;
+  });
 };
 
 const logout = () => {
   localStorage.removeItem("user");
-}
+};
 
 export default {
   register,
   login,
   logout,
-};;
+};

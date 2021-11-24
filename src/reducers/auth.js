@@ -31,7 +31,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         isLoggedIn: true,
-        user: payload.user,
+        user: payload.user.data,
       };
     case LOGIN_FAIL:
       return {

@@ -37,7 +37,7 @@ const validPassword = (value) => {
   }
 };
 
-const Register = (props) => {
+const Register = () => {
   const form = useRef();
   const checkBtn = useRef();
 
@@ -48,7 +48,7 @@ const Register = (props) => {
   const [loading, setLoading] = useState(false);
   const [successful, setSuccessful] = useState(false);
 
-  const message = useSelector((state) => state.message);
+  const { message } = useSelector((state) => state.message);
 
   const dispatch = useDispatch();
 
@@ -77,16 +77,14 @@ const Register = (props) => {
     form.current.validateAll();
 
     if (checkBtn.current.context._errors.length === 0) {
-      dispatch(
-        register({ username, password, firstname, lastname })
-          .then(() => {
-            setSuccessful(true);
-          })
-          .catch(() => {
-            setSuccessful(false);
-            setLoading(false);
-          })
-      );
+      dispatch(register({ username, password, firstname, lastname }))
+        .then(() => {
+          setSuccessful(true);
+        })
+        .catch(() => {
+          setSuccessful(false);
+          setLoading(false);
+        });
     } else {
       setLoading(false);
     }

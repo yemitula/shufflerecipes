@@ -26,17 +26,19 @@ const Login = (props) => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const isLoggedIn = useSelector((state) => state.auth);
-  const message = useSelector((state) => state.message);
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  const { message } = useSelector((state) => state.message);
 
   const dispatch = useDispatch();
 
   const onChangeUsername = (e) => {
-    setUsername(e.target.value);
+    const username = e.target.value;
+    setUsername(username);
   };
 
   const onChangePassword = (e) => {
-    setPassword(e.target.value);
+    const password = e.target.value;
+    setPassword(password);
   };
 
   const handleLogin = (e) => {
@@ -46,16 +48,14 @@ const Login = (props) => {
     form.current.validateAll();
 
     if (checkBtn.current.context._errors.length === 0) {
-      dispatch(
-        login({ username, password })
-          .then(() => {
-            props.history.push("/profile");
-            window.location.reload();
-          })
-          .catch(() => {
-            setLoading(false);
-          })
-      );
+      dispatch(login({ username, password }))
+        .then(() => {
+          props.history.push("/profile");
+          window.location.reload();
+        })
+        .catch(() => {
+          setLoading(false);
+        });
     } else {
       setLoading(false);
     }
