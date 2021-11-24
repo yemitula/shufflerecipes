@@ -53,7 +53,6 @@ const RecipeEditor = () => {
       dispatch(createRecipe(currentUser.id, recipe))
         .then(() => {
           setLoading(false);
-          // setRecipe(blankRecipe);
         })
         .catch(() => {
           setLoading(false);

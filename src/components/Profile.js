@@ -13,27 +13,37 @@ const Profile = () => {
     <div className="container">
       <header className="jumbotron">
         <h3>
-          <strong>{currentUser.firstname}'s</strong> Profile
+          <strong>{currentUser.firstname}'s</strong> Details
         </h3>
       </header>
-      <p>
-        <strong>ID:</strong> {currentUser.id}
-      </p>
-      <p>
-        <strong>Username:</strong> {currentUser.username}
-      </p>
-      <p>
-        <strong>Firstname:</strong> {currentUser.firstname}
-      </p>
-      <p>
-        <strong>Last namee:</strong> {currentUser.lastname}
-      </p>
-      <strong>Authorities:</strong>
-      <ul>
-        {currentUser.roles.map((role, index) => (
-          <li key={index}>{role}</li>
-        ))}
-      </ul>
+      <table className="table table-striped">
+        <tbody>
+          <tr>
+            <td>ID</td>
+            <td>
+              <strong>{currentUser.id}</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>Username</td>
+            <td>
+              <strong>{currentUser.username}</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>First name</td>
+            <td>
+              <strong>{currentUser.firstname}</strong>
+            </td>
+          </tr>
+          <tr>
+            <td>Last name</td>
+            <td>
+              <strong>{currentUser.lastname}</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };

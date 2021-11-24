@@ -8,7 +8,6 @@ import "./App.css";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Profile from "./components/Profile";
-import BoardUser from "./components/BoardUser";
 import RecipesPage from "./components/RecipesPage";
 
 import { logout } from "./actions/auth";
@@ -77,7 +76,6 @@ const App = () => {
             <Route exact path="/register" component={Register} />
             <Route exact path="/recipes" component={RecipesPage} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/user" component={BoardUser} />
           </Switch>
         </div>
       </div>
