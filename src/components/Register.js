@@ -150,7 +150,7 @@ const Register = () => {
                 />
               </div>
 
-              <div className="form-group">
+              <div className="form-group mt-2">
                 <button
                   className="btn btn-primary btn-block"
                   disabled={loading}

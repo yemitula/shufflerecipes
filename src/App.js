@@ -7,7 +7,6 @@ import "./App.css";
 
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Home from "./components/Home";
 import Profile from "./components/Profile";
 import BoardUser from "./components/BoardUser";
 import RecipesPage from "./components/RecipesPage";
@@ -35,7 +34,7 @@ const App = () => {
     <Router history={history}>
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-          <Link className="navbar-brand" to={"/"}>
+          <Link className="navbar-brand m-3" to={"/"}>
             ShuffleRecipes
           </Link>
           {currentUser ? (

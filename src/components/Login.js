@@ -50,7 +50,7 @@ const Login = (props) => {
     if (checkBtn.current.context._errors.length === 0) {
       dispatch(login({ username, password }))
         .then(() => {
-          props.history.push("/profile");
+          props.history.push("/recipes");
           window.location.reload();
         })
         .catch(() => {
@@ -62,7 +62,7 @@ const Login = (props) => {
   };
 
   if (isLoggedIn) {
-    return <Redirect to="/profile" />;
+    return <Redirect to="/recipes" />;
   }
 
   return (
@@ -99,7 +99,7 @@ const Login = (props) => {
             />
           </div>
 
-          <div className="form-group">
+          <div className="form-group mt-2">
             <button className="btn btn-primary btn-block" disabled={loading}>
               {loading && (
                 <span className="spinner-border spinner-border-sm"></span>
@@ -109,7 +109,7 @@ const Login = (props) => {
           </div>
 
           {message && (
-            <div className="form-group">
+            <div className="form-group mt-2">
               <div className="alert alert-danger" role="alert">
                 {message}
               </div>

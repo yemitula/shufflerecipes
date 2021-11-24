@@ -104,7 +104,7 @@ const RecipeEditor = () => {
               />
             </div>
 
-            <div className="form-group">
+            <div className="form-group mt-2">
               <button className="btn btn-primary btn-block" disabled={loading}>
                 {loading && (
                   <span className="spinner-border spinner-border-sm"></span>
